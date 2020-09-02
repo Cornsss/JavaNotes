@@ -20,7 +20,7 @@ public class Demo1 {
                 }
             }
         });
-        thread.setDaemon(false);//设置为守护线程
+        thread.setDaemon(true);//设置为守护线程,主线程停止后，thread线程也停止了
         thread.start();
         for (int i = 0; i < 10; i++) {
             try {
