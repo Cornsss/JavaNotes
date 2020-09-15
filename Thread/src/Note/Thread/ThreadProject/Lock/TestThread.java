@@ -1,5 +1,6 @@
 package Note.Thread.ThreadProject.Lock;
 
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class TestThread {
@@ -13,5 +14,7 @@ public class TestThread {
         Thread t2 = new Thread(output,"消费者线程----");
         t1.start();
         t2.start();
+        AtomicInteger atomicInteger = new AtomicInteger();
+        atomicInteger.incrementAndGet();
     }
 }

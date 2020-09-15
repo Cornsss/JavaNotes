@@ -41,6 +41,14 @@
  * 2.手动建立flag变量，在线程中逻辑结束时更改flag值来停止线程
  * 3.interupt方法
 
-15.Vector和Arraylist、HashTable和HashMap区别？
+15.Vector和Arraylist、HashTable和HashMap区别？HashTable的get方法线程安全吗？
 
-16.
+16.突发奇想：switch中的变量什么类型都可以吗？
+
+17.线程池的参数该如何配置？
+CPU密集:各线程响应速度快，线程数和CPU核数相同
+IO密集:如果有大量的数据库操作、读写、阻塞等，就设置为：CPU*2
+
+18.线程池的原理解析（看源码）
+
+

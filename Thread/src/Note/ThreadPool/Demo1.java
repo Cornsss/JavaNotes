@@ -1,10 +1,7 @@
 package Note.ThreadPool;
 
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 
 /**
  * 线程池的4中创建方式
@@ -12,6 +9,14 @@ import java.util.concurrent.TimeUnit;
  * 2.可固定长度的线程池：
  * 3.可定时启动的线程池
  * 4.单线程化的线程池：保证所有任务按照指定顺序(FIFO, LIFO, 优先级)执行
+ *
+ * 原理：
+ * ThreadPoolExecutor
+ * 参数：核心池大小、线程池大小、终止时间、等待时间
+ *
+ * 如何配置以上参数？
+ * CPU密集:各线程响应速度快，线程数和CPU核数相同
+ * IO密集:如果有大量的数据库操作、读写、阻塞等，就设置为：CPU*2
  */
 public class Demo1 {
     public static void main(String[] args) {

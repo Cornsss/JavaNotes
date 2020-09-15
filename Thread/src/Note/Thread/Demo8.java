@@ -6,16 +6,21 @@ package Note.Thread;
  */
 
 class ResNumber{
-    public static int count = 0;
-    public static ThreadLocal<Integer> threadLocal = new ThreadLocal<Integer>(){
+    public static int count;
+    public static final ThreadLocal<Integer> threadLocal = new ThreadLocal<Integer>(){
         protected Integer initalValue(){
-            return 0;
+            return null;
         };
     };
 
     public Integer getNumber(){
-        count = threadLocal.get()+1;
-        threadLocal.set(count);
+        if(threadLocal == null){
+            ResNumber.threadLocal.set(0);
+        }else{
+            count = threadLocal.get()+1;
+            threadLocal.set(count);
+        }
+
         return  count;
     }
 }
